@@ -62,8 +62,8 @@ Run backend:
 
 npm start
 
-3. Setup quizz
-cd  quizz
+3. Setup quiz
+cd  quiz
 npm install
 npm run dev
 
