@@ -47,7 +47,7 @@ Deployment: Vercel (Frontend), Render/Heroku (Backend), MongoDB Atlas (Database)
 
 ⚙️ Installation
 1. Clone Repository
-git clone https://github.com/your-username/quiz-app.git
+git clone https://github.com/your-username/quiz-app.git](https://github.com/dkvishwak44-code/Quiz.git
 cd quiz-app
 
 2. Setup Backend
