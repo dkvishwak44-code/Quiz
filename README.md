@@ -91,7 +91,7 @@ Quiz Routes
 
 GET /questions/:category → Get 10 random questions by category
 
-POST /progress → Submit answers & get score
+POST /save-progress → Submit answers & get score
 
 👨‍💻 Author
 
