@@ -27,7 +27,6 @@ app.use('/',userRouter);
  app.use('/',progressRouter);
 
 
-
 app.listen(PORT ,()=>{
     console.log(`server is running on http://localhost:${PORT}`);
 })
