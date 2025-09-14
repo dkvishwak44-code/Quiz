@@ -11,10 +11,7 @@ const PORT = process.env.PORT || 5000
 //for cookie 
 app.use(cookieParser());
 //middleware for data from frontend
-app.use(cors({
-origin:"https://quiiiizzzz.netlify.app/"
-}
-))
+app.use(cors())
 //middleware for body incomming data
 app.use(express.json())
 //connect to database 
