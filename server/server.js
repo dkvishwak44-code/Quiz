@@ -1,6 +1,4 @@
 const connectDB = require('./config/connectdb');
-const questions = require('./model/questionModel');
-const bcrypt = require('bcryptjs')
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
