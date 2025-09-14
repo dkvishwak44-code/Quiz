@@ -58,7 +58,7 @@ npm install
 Create a .env file inside backend/ with:
 
 PORT=5000
-MONGO_URI= mongodb+srv://DinesVi:Dinesh%40123@test.0huwwig.mongodb.net/Quiz
+MONGO_URI= our_mongodb-connection_string
 
 Run backend:
 
