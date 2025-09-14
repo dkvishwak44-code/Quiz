@@ -43,19 +43,17 @@ Database: MongoDB Atlas
 
 Authentication: JWT, bcrypt
 
-Deployment: Vercel (Frontend), Render/Heroku (Backend), MongoDB Atlas (Database)
-
 ⚙️ Installation
 1. Clone Repository
-git clone https://github.com/your-username/quiz-app.git
+git clone https://github.com/your-username/quiz-app.git](https://github.com/dkvishwak44-code/Quiz.git
 cd quiz-app
 
 2. Setup Backend
-cd backend
+cd server
 npm install
 
 
-Create a .env file inside backend/ with:
+Create a .env file inside server/ with:
 
 PORT=5000
 MONGO_URI= our_mongodb-connection_string
@@ -64,14 +62,14 @@ Run backend:
 
 npm start
 
-3. Setup Frontend
-cd frontend
+3. Setup quiz
+cd  quiz
 npm install
-npm start
+npm run dev
 
-4. Run App
+5. Run App
 
-Frontend → http://localhost:3000
+Frontend → http://localhost:5173
 
 Backend → http://localhost:5000
 
@@ -83,7 +81,7 @@ Database: MongoDB Atlas
 📌 API Endpoints
 Auth Routes
 
-POST //register → Register new user
+POST /register → Register new user
 
 POST /login → Login user
 
@@ -93,7 +91,7 @@ Quiz Routes
 
 GET /questions/:category → Get 10 random questions by category
 
-POST //quiz/submit → Submit answers & get score
+POST /save-progress → Submit answers & get score
 
 👨‍💻 Author
 
