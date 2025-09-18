@@ -13,13 +13,14 @@ const Quizz = () => {
   const [score, setScore] = useState(0);
   const [restart,setRestart] =useState(false);
   const category = useParams().category;
+  const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
 
   useEffect(() => {
   //method for fetching questiong from database
     const fetchQuestions = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5000/questions/${category}`);
+        const res = await fetch(`${Backend_Url}/questions/${category}`);
         if (!res.ok) {
           throw new Error('Network response was not ok')
         }
@@ -73,7 +74,7 @@ const Quizz = () => {
     console.log(token);
     
    try {
-     const res = await fetch('http://localhost:5000/save-progress',{
+     const res = await fetch(`${Backend_Url}/save-progress`,{
       method : "POST",
       headers : {
         authorization : `Bearer ${token}`,

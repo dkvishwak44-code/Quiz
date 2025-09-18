@@ -3,14 +3,15 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify';
 const AddQuestion = () => {
     const {register,handleSubmit,formState:{isSubmitting},reset} = useForm();
-   
+    const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
+
     const onSubmit = async(data)=>{
 
         const {question,option1,option2,option3,option4,answer,category} = data;
         const options = [option1,option2,option3,option4]; 
         const Data = {question,options,answer,category};
 
-            const respone = await fetch('http://localhost:5000/add-questions',{
+            const respone = await fetch(`${Backend_Url}/add-questions`,{
             method : "POST",
             headers: {
                 'Content-Type' : 'application/json'

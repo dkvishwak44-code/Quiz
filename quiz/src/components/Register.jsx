@@ -4,13 +4,14 @@ import { toast } from 'react-toastify';
 
 const Register = () => {
     const { register, handleSubmit, formState: { isSubmitting, errors }, reset } = useForm();
+   const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
 
     const onSubmit = async (data) => {
         const {password ,confirmpassword} = data;
         if(password === confirmpassword){
             console.log('data added successfully');
             console.log(data);
-         const res = await fetch('http://localhost:5000/register',{
+         const res = await fetch(`${Backend_Url}/register`,{
             method:'POST',
             headers : {
              'Content-Type' :'application/json'

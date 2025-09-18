@@ -6,6 +6,7 @@ const Userdashboard = () => {
    const [name ,setName] = useState('');
    const [loading,setLoading] = useState(false);
    const [error,setError] = useState('');
+   const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
 
    useEffect(()=>{
     
@@ -13,7 +14,7 @@ const Userdashboard = () => {
       setLoading(true);
       const token = localStorage.getItem('token');
       try {
-        const res = await fetch('http://localhost:5000/dashboard',{
+        const res = await fetch(`${Backend_Url}/dashboard`,{
         headers : {
           authorization :  `Bearer ${token}`,
           'Content-Type' : "application/json"

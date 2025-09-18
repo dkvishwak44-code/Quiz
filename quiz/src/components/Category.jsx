@@ -6,10 +6,11 @@ const Category = () => {
 
     const [category , setCategory] = useState([]);
     const navigate = useNavigate();
+    const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
 
     useEffect(()=>{
         const fetchCategory = async()=>{
-            const res = await fetch('http://localhost:5000/category');
+            const res = await fetch(`${Backend_Url}/category`);
             const data = await res.json();
             setCategory(data);
         }

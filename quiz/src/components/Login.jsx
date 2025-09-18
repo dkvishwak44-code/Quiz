@@ -7,7 +7,9 @@ const Login = () => {
 
     const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
     const navigate = useNavigate();
-
+    const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
+     console.log(Backend_Url);
+     
     //ckeck login
     const checkedLoggedIn = () => {
         const token = localStorage.getItem('token');
@@ -22,7 +24,7 @@ const Login = () => {
     const onSubmit = async (data) => {
         try {
 
-            const response = await fetch('http://localhost:5000/login', {
+            const response = await fetch(`${Backend_Url}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": 'application/json'
