@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.jpg";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Navbar = () => {
     const [isloggedIn,setIsLoggedIn] = useState(false);
     const [isHamBarActive ,setIsHamBarActive] = useState(false);
    const  [token,setToken] = useState('');
+   const navigate = useNavigate();
 
     const isLogin=()=>{
         setToken(localStorage.getItem('token'));
@@ -24,7 +25,7 @@ const Navbar = () => {
 
 const handleLogOut = ()=>{
    localStorage.removeItem('token');
-   window.location.reload();
+    navigate('/');
 }
 
 //when we click hambar
