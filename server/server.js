@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000
 app.use(cookieParser());
 //middleware for data from frontend
 app.use(cors({
-  origin: ["http://localhost:5173", "https://quiiiizzzz.netlify.app"],
+  origin: ["http://localhost:5173", "https://quiz-eight-liart-35.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
