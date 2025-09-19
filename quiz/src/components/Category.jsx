@@ -27,7 +27,7 @@ const handleClick=(category)=>{
   return (
     <>
     <div className='flex justify-center items-center'><h1 className='text-3xl font-bold'>Category</h1></div>
-    <div className='flex  gap-5 m-5'>
+    <div className='flex  gap-5 m-5 flex-wrap'>
        {category.map((category,idx)=>{ 
         return <div className='flex justify-center items-center  bg-white rounded-xl w-30 h-20 text-lg ' key={idx} onClick={()=>{handleClick(category)}}>{category}</div>
        })}
