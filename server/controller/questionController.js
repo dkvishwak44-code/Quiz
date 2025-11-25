@@ -15,6 +15,7 @@ const addQuestion = async(req,res)=>{
 const fetchCategory = async(req,res)=>{
   try {
       const response = await questions.distinct('category');
+      
     if(response){
        res.send(response);
     }

@@ -1,0 +1,12 @@
+# Ignore env files anywhere
+**/.env
+
+# Node modules
+**/node_modules/
+
+# Logs
+**/*.log
+
+# Build folders
+quiz/build/
+server/dist/

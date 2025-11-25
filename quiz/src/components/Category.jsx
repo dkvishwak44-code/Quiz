@@ -16,8 +16,7 @@ const Category = () => {
         }
         fetchCategory();
         
-        
-    },[category]);
+    },[]);
   
 //handle to
 const handleClick=(category)=>{

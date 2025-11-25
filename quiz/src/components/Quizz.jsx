@@ -10,8 +10,10 @@ const Quizz = () => {
   const [showResult, setShowResult] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(0);
   const [correctAnswer, setCorrectAnswer] = useState(0);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(1);
   const [restart,setRestart] =useState(false);
+  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds timer
+  
   const category = useParams().category;
   const Backend_Url = import.meta.env.VITE_API_BACKEND_URL; 
 
@@ -45,12 +47,13 @@ const Quizz = () => {
 
   //to check answer is correct or not and set correct and wrong answer
    const checkAnswer =(option)=>{
-        if (option === questions[currentQuestion].answer) {
-        setScore(score + 1);
+        if (option == questions[currentQuestion].answer) {
+        setScore(score+1);
         setCorrectAnswer(correctAnswer + 1);
-        console.log(score);
       }else {
-        setWrongAnswer(wrongAnswer + 1);
+        
+        setWrongAnswer(wrongAnswer+1);
+        
       }
    }
 
@@ -62,8 +65,9 @@ const Quizz = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       checkAnswer(option);
-      setShowResult(true);
       saveProgess();
+      setShowResult(true);
+      
     }
 
   }
@@ -103,11 +107,11 @@ const handleRestart = ()=>{
 
   return (
     <div className='flex flex-col justify-center items-center m-5 gap-1'>
-      <h1 className=' font-bold md:text-4xl'>  Quizz</h1>
+      <h1 className=' font-bold text-2xl md:text-4xl'>  Quizz</h1>
         
-      <div className='flex flex-col justify-center items-center w-[60%] h-90 bg-white p-5 gap-5 rounded-xl md:w-[50%]'>
+      <div className='flex flex-col justify-center items-center h-90 bg-white p-5 gap-5 rounded-xl w-[90%] md:w-[60%] lg:w-[60%]'>
         {!showResult ? (<>
-          <h1 className=' text-xl md:text-3xl font-bold w-[90%] text-center'>{questions[currentQuestion].question}</h1>
+          <h1 className=' text-xl  lg:text-3xl font-bold w-[90%] text-center'>{questions[currentQuestion].question}</h1>
           <div className='flex flex-col w-[90%]'>
             {questions[currentQuestion].options.map((option, idx) => {
               return <button key={idx} className='border-1 mt-2 px-2 py-1 rounded text-white bg-blue-500 hover:bg-blue-600' onClick={() => { handleOptionClick(option) }}>{option}</button>
